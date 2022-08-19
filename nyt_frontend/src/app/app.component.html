@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <span>{{ publicationDate }}</span>
+  <span class="title-center"><img [src]= "headerImageURL"></span>
+</mat-toolbar>
+<br><br><br><br><br>
+<mat-card class="example-card" *ngFor="let item of itemsList">
+  <mat-card-title-group>
+    <mat-card-subtitle>{{ item.pubDate }}</mat-card-subtitle>
+    <mat-card-title><a [attr.href]="item.link">{{ item.title }}</a></mat-card-title>
+    <a [attr.href]="item.link"><img mat-card-lg-image *ngIf="item.imageLink" [src]= "item.imageLink" (click)="item.link"></a>
+  </mat-card-title-group>
+  <br>
+  <mat-card-content><a [attr.href]="item.link">{{ item.description }}</a></mat-card-content>
+  <mat-card-subtitle>By {{ item.creator }}</mat-card-subtitle>
+</mat-card>
