@@ -146,6 +146,7 @@ public class NytController {
         String day = dateSplitted[1];
         String month = dateSplitted[2];
         String year = dateSplitted[3];
-        return dayOfTheWeek + " " + day + " " + month + " " + year;
+        String time = dateSplitted[4];
+        return dayOfTheWeek + " " + day + " " + month + " " + year + ", " + time;
     }
 }
